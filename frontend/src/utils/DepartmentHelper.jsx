@@ -1,6 +1,5 @@
-import React from 'react'; 
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export const columns = [
     {
@@ -26,7 +25,8 @@ export const DepartmentButtons = ({_id,onDepartmentDelete}) => {
          if(confirm){
         try {
            
-            const response = await axios.delete(`http://localhost:3000/api/department/${id}`, {
+            // const response = await axios.delete(`http://localhost:3000/api/department/${id}`, {
+            const response = await axios.delete(`https://worknest-backend.vercel.app/api/department/${id}`, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("token")}`
                 }
